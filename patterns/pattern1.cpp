@@ -136,10 +136,62 @@ void print10(int len){
     }
 }
 
+void print11(int len){
+    int start = 1;
+    for (int i = 0; i < len; i++)
+    {
+
+        if(i%2==0) start = 1;
+        else start = 0;
+        for (int j = 0; j <=i; j++)
+        {
+            cout<<start;
+            start = 1-start;
+        } 
+        cout<<endl;
+    }
+}
+
+void print12(int len){
+    for(int i=1;i<=len;i++){
+        for(int j=1;j<=i;j++){
+            cout<<j;
+        }
+        for(int x=1;x<=2*len-2*i;x++){
+            cout<<" "; 
+        }
+        for(int z=i;z>=1;z--){
+            cout<<z;
+        }
+        cout<<endl;
+    }
+}
+
+void print13(int len){
+    int count = 1;
+    for(int i=1;i<=len;i++){
+        for(int j=1;j<=i;j++){
+            cout<<count<<' ';
+            count++;
+        }
+        cout<<endl;
+    }
+}
+
+void print14(int len){
+    int count = 0;
+    for(int i=0;i<len;i++){
+        for(char ch='A';ch<='A'+i;ch++){
+            cout<<ch<<' ';
+        }
+        cout<<endl;
+    }
+}
+
 int main(){
     int len;
     cin>>len;
     // print7(len);
     // print8(len);
-    print10(len);
+    print14(len);
 }
