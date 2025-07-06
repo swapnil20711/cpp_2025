@@ -96,9 +96,89 @@ void explainVector(){
 
 }
 
+void explainList(){
+    list<int> l;
+    l.push_back(1);
+    l.emplace_back(2);
+    l.push_front(3);
+    for(auto i : l){
+        cout<<i<<" ";
+    }
+    // rest same functions as vector
+}
+void explainDeque(){
+    deque<int> d;
+    d.push_back(1);
+    d.push_front(2);
+    d.emplace_back(3);
+    for(auto i : d){
+        cout<<i<<" ";
+    }
+    // rest same functions as vector
+}
+
+
+void explainStack(){
+    stack<int> s;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(3);
+    s.emplace(5);
+
+    cout<<s.top()<<endl;
+    s.pop();
+    cout<<s.top()<<endl;
+
+    cout<<s.size()<<endl;
+    cout<<s.empty()<<endl;
+}
+
+void explainQueue(){
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(4);
+
+    q.back()+=5;
+
+    cout<<q.front()<<endl;
+
+    cout<<q.back()<<endl;
+
+    q.pop();
+    cout<<q.front()<<endl;
+    // size swap empty same as stack
+}
+
+void explainPO(){
+    // push O(log n) pop O(log n) top O(1)
+    priority_queue<int> pq;
+    pq.push(5);
+    pq.push(2);
+    pq.push(8);
+    pq.emplace(10);
+
+    cout<<"Maximum element is "<<pq.top()<<endl; 
+
+    priority_queue<int, vector<int>, greater<int>> minHeap;
+    minHeap.push(5);
+    minHeap.push(2);
+    minHeap.push(8);
+    minHeap.emplace(10);    
+
+    cout<<"Minimum element is "<<minHeap.top()<<endl;
+}
+
+
 int main(){
     int s = sum(2, 3);
     // cout << s << endl;
     // explainPair();
-    explainVector();
+    // explainVector();
+    // explainList();
+    // explainDeque();
+    // explainStack();
+    // explainQueue();
+    explainPO();
 }

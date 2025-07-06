@@ -1,4 +1,2 @@
-3
-1
-2
-10 100 6 6 20 
+Maximum element is 10
+Minimum element is 2
