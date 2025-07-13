@@ -1,2 +1,8 @@
 Binary representation of 10 is: 1010
-10
+Decimal representation of 1010 is: 10
+Bitwise AND: 1
+Bitwise OR: 7
+Bitwise XOR: 6
+Bitwise NOT: -6
+Left Shift: 10
+Right Shift: 2

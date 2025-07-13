@@ -25,8 +25,30 @@ int convertToDecimal(string binary) {
     return decimal;
 }
 
+void bitwiseOperations() {
+    int a = 5; // 0101
+    int b = 3; // 0011
+
+    // AND 0001 -> 1
+    // OR 0111 -> 7
+    // XOR 0110 -> 6
+    // NOT 1010 (inverts all bits) -> -6
+    // Left Shift 1010 (5*2 = 10) -> 10
+    // Right Shift 0010 (5/2 = 2) -> 2 = x>>k = x/(2^k)
+    //Largest integer is 2^31-1, so we can use 32 bits for representation INT_MAX
+    // Smallest integer -2^31, so we can use 32 bits for representation INT_MIN
+
+    cout << "Bitwise AND: " << (a & b) << endl; 
+    cout << "Bitwise OR: " << (a | b) << endl; 
+    cout << "Bitwise XOR: " << (a ^ b) << endl;
+    cout << "Bitwise NOT: " << (~a) << endl; 
+    cout << "Left Shift: " << (a << 1) << endl; 
+    cout << "Right Shift: " << (a >> 1) << endl;
+}
+
 int main(){
     string s = convertToBinary(10);
     cout << "Binary representation of 10 is: " << s << endl;
     cout<<"Decimal representation of 1010 is: "<<convertToDecimal("1010")<<endl;
+    bitwiseOperations();
 }
