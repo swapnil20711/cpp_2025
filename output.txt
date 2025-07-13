@@ -6,3 +6,6 @@ Bitwise XOR: 6
 Bitwise NOT: -6
 Left Shift: 10
 Right Shift: 2
+After swapping: 3 5
+The 1 th bit is not set.
+The 2 th bit is set.

@@ -46,9 +46,29 @@ void bitwiseOperations() {
     cout << "Right Shift: " << (a >> 1) << endl;
 }
 
+int swap(int &a, int &b) {
+    a = a ^ b; 
+    b = a ^ b; //(a = a ^ b)^b = a ^ b ^ b = a
+    a = a ^ b; // (a = a ^ b)^a = a ^ b ^ a = b
+}
+
+void checkIfIthBitIsSet(int n, int i) {
+    if((n & (1 << i))!= 0) {
+        cout << "The " << i << "th bit is set." << endl;
+    } else {
+        cout << "The " << i << "th bit is not set." << endl;
+    }
+}
+
 int main(){
     string s = convertToBinary(10);
     cout << "Binary representation of 10 is: " << s << endl;
     cout<<"Decimal representation of 1010 is: "<<convertToDecimal("1010")<<endl;
     bitwiseOperations();
+    int a = 5, b = 3;
+    swap(a, b);
+    cout << "After swapping: ";
+    cout<< a << " " << b << endl;
+    checkIfIthBitIsSet(13, 1);
+    checkIfIthBitIsSet(13, 2);
 }
