@@ -88,6 +88,21 @@ bool checkIfPowerOf2(int n) {
     return (n&n-1) == 0;
 }
 
+int countSetBits(int n) {
+    //1101
+    //0001 ->1
+    //0010 -> 0
+    //0100 -> 1 
+    //1000 -> 1
+    //Total 3 set bits
+    int count = 0;
+    while(n > 0) {
+        count += n & 1; 
+        n >>= 1; 
+    }
+    return count;
+}
+
 int main(){
     string s = convertToBinary(10);
     cout << "Binary representation of 10 is: " << s << endl;
@@ -108,4 +123,5 @@ int main(){
     cout<<removeLastSetBit(40) << endl;
     cout<< checkIfPowerOf2(32) << endl;
     cout<< checkIfPowerOf2(15) << endl;
+    cout<< countSetBits(13) << endl;
 }
