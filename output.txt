@@ -13,3 +13,6 @@ The 2th bit is set.
 9
 9
 15
+32
+1
+0

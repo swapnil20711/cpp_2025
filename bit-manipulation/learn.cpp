@@ -80,6 +80,14 @@ int toggleIthBit(int n, int i) {
     return n ^ (1 << i);
 }
 
+int removeLastSetBit(int n) {
+    return n & (n - 1);
+}
+
+bool checkIfPowerOf2(int n) {
+    return (n&n-1) == 0;
+}
+
 int main(){
     string s = convertToBinary(10);
     cout << "Binary representation of 10 is: " << s << endl;
@@ -97,4 +105,7 @@ int main(){
     cout<<clearIthBit(13, 2) << endl;
     cout<<clearIthBit(9, 2) << endl;  
     cout<<toggleIthBit(13, 1) << endl;
+    cout<<removeLastSetBit(40) << endl;
+    cout<< checkIfPowerOf2(32) << endl;
+    cout<< checkIfPowerOf2(15) << endl;
 }
