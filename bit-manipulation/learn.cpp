@@ -46,7 +46,7 @@ void bitwiseOperations() {
     cout << "Right Shift: " << (a >> 1) << endl;
 }
 
-int swap(int &a, int &b) {
+void swap(int &a, int &b) {
     a = a ^ b; 
     b = a ^ b; //(a = a ^ b)^b = a ^ b ^ b = a
     a = a ^ b; // (a = a ^ b)^a = a ^ b ^ a = b
@@ -60,6 +60,26 @@ void checkIfIthBitIsSet(int n, int i) {
     }
 }
 
+void checkIfIthBitIsSetSecondApproach(int n, int i) {
+    if(((n>>i) & 1)!= 0) {
+        cout << "The " << i << "th bit is set." << endl;
+    } else {
+        cout << "The " << i << "th bit is not set." << endl;
+    }
+}
+
+int setIthBit(int n, int i) {
+    return n | (1 << i);
+}
+
+int clearIthBit(int n, int i) {
+    return n & ~(1 << i);
+}
+
+int toggleIthBit(int n, int i) {
+    return n ^ (1 << i);
+}
+
 int main(){
     string s = convertToBinary(10);
     cout << "Binary representation of 10 is: " << s << endl;
@@ -69,6 +89,12 @@ int main(){
     swap(a, b);
     cout << "After swapping: ";
     cout<< a << " " << b << endl;
-    checkIfIthBitIsSet(13, 1);
-    checkIfIthBitIsSet(13, 2);
+    // checkIfIthBitIsSet(13, 1);
+    // checkIfIthBitIsSet(13, 2);
+    checkIfIthBitIsSetSecondApproach(13, 1);
+    checkIfIthBitIsSetSecondApproach(13, 2);
+    cout<<setIthBit(9, 2)<<endl;
+    cout<<clearIthBit(13, 2) << endl;
+    cout<<clearIthBit(9, 2) << endl;  
+    cout<<toggleIthBit(13, 1) << endl;
 }
