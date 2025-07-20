@@ -113,6 +113,88 @@ vector<vector<int>> generateSubsets(vector<int> &nums) {
     }
     return subsets;
 }
+int singleNumber(vector<int> &nums) {
+    int result = 0;
+    for(int num:nums){
+        result ^= num; 
+    }
+    return result;
+}
+
+int singleNumberBruteForce(vector<int> &nums) {
+    map<int, int> countMap;
+    for(int num: nums) {
+        countMap[num]++;
+    }
+    for(auto &pair: countMap) {
+        if(pair.second == 1) {
+            return pair.first;
+        }
+    }
+}
+
+
+// leetcode 191
+// Hamming Weight
+ int hammingWeight(int n) {
+    int count = 0;
+    while(n > 0) {
+        count += n & 1;
+        n >>= 1;       
+    }
+    return count;
+}
+
+// 461. Hamming Distance
+int hammingDistance(int x, int y) {
+    int xorValue = x ^ y;
+    int count = 0;
+    while(xorValue > 0) {
+        count += xorValue & 1;
+        xorValue >>= 1; 
+    }
+    return count;
+}
+// 338. Counting Bits
+vector<int> countBits(int n) {
+    vector<int> result(n + 1, 0);
+    for(int i = 0; i <= n; i++) {
+        int count = 0;
+        int num = i;
+        while(num > 0) {
+            count += num & 1; 
+            num >>= 1; 
+        }
+        result[i] = count;
+    }        
+    return result;
+}
+
+bool isPowerOfFour(int n) {
+    if(n <= 0) return false;
+    if((n&n-1)==0){
+        int index = 0;
+        while(n>0){
+            index++;
+            n>>=1;
+        }
+        return (index-1) % 2 == 0; 
+    }else{
+        return false;
+    }
+}
+
+// Leetcode 389. Find the Difference
+char findTheDifference(string s, string t) {
+    int result = 0;
+    for(char c : s) {
+        result ^= c;    
+    }
+    for(char c : t) {
+        result ^= c;    
+    }
+    return char(result);
+}
 
 int countSetBits(int n) {
     //1101
@@ -153,4 +235,8 @@ int main(){
     cout << "Number of bit flips from 10 to 7: " << numberOfBitFlips(10, 7) << endl;
     vector <int> nums = {1, 2, 3};
     vector<vector<int>> subsets = generateSubsets(nums);
+    
+    vector<int> singleNum = {4, 1, 2, 1, 2};
+    cout<< "Single number in the array: " << singleNumberBruteForce(singleNum) << endl;
+    cout << "Single number in the array: " << singleNumber(singleNum) << endl;
 }

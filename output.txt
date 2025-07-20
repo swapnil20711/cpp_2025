@@ -18,11 +18,6 @@ The 2th bit is set.
 0
 3
 Number of bit flips from 10 to 7: 3
-{}
-{1}
-{2}
-{12}
-{3}
-{13}
-{23}
-{123}
+Single number in the array: 4
+Single number in the array: 4
+e
