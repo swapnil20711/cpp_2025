@@ -88,6 +88,32 @@ bool checkIfPowerOf2(int n) {
     return (n&n-1) == 0;
 }
 
+int numberOfBitFlips(int start,int goal){
+    int ans = start ^ goal; 
+    int count = 0;
+    while(ans > 0) {
+        count += ans & 1;
+        ans >>= 1; 
+    }
+    return count;
+}
+
+vector<vector<int>> generateSubsets(vector<int> &nums) {
+    vector<vector<int>> subsets;
+    int n = nums.size();
+    int totalSubsets = 1 << n; 
+    for(int i =0 ;i<totalSubsets; i++) {
+        vector<int> subset;
+        for(int j = 0; j < n; j++) {
+            if(i & (1 << j)) {
+                subset.push_back(nums[j]);
+            }
+        }
+        subsets.push_back(subset);  
+    }
+    return subsets;
+}
+
 int countSetBits(int n) {
     //1101
     //0001 ->1
@@ -124,4 +150,7 @@ int main(){
     cout<< checkIfPowerOf2(32) << endl;
     cout<< checkIfPowerOf2(15) << endl;
     cout<< countSetBits(13) << endl;
+    cout << "Number of bit flips from 10 to 7: " << numberOfBitFlips(10, 7) << endl;
+    vector <int> nums = {1, 2, 3};
+    vector<vector<int>> subsets = generateSubsets(nums);
 }

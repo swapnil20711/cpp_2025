@@ -17,3 +17,12 @@ The 2th bit is set.
 1
 0
 3
+Number of bit flips from 10 to 7: 3
+{}
+{1}
+{2}
+{12}
+{3}
+{13}
+{23}
+{123}
