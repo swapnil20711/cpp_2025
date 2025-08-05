@@ -133,6 +133,34 @@ int singleNumberBruteForce(vector<int> &nums) {
     }
 }
 
+int singleNumber2Better(vector<int> &nums){
+    // TC : O(32*N)
+    int ans = 0;
+    int n = nums.size();
+    for(int bitIndex=0;bitIndex<32;bitIndex++){
+        int count = 0;
+        for(int i=0;i<n;i++){
+            if(nums[i]&(1<<bitIndex)){
+                count++;
+            }
+        }
+        if(count%3==1){
+            ans = ans | (1<<bitIndex);
+        }
+    }
+    return ans;
+}
+
+int singleNumber2SecondApproach(vector<int> &nums){
+    sort(nums.begin(),nums.end());
+    for(int i=1;i<nums.size();i=i+3){
+        if(nums[i]!=nums[i-1]){
+            return nums[i-1];
+        }
+    }
+    return nums[nums.size()-1];
+}
+
 
 // leetcode 191
 // Hamming Weight
@@ -211,6 +239,10 @@ int countSetBits(int n) {
     return count;
 }
 
+int getSum(int a, int b) {
+    return a | b;
+}
+
 int main(){
     string s = convertToBinary(10);
     cout << "Binary representation of 10 is: " << s << endl;
@@ -239,4 +271,10 @@ int main(){
     vector<int> singleNum = {4, 1, 2, 1, 2};
     cout<< "Single number in the array: " << singleNumberBruteForce(singleNum) << endl;
     cout << "Single number in the array: " << singleNumber(singleNum) << endl;
+
+    vector<int> singleNum2 = {2,2,2,3,3,3,6,6,6,1,5,5,5};
+    cout<<"Single number in the array is : "<<singleNumber2Better(singleNum2)<<endl;
+    cout<<"Single number in the array is : "<<singleNumber2SecondApproach(singleNum2)<<endl;
+
+    cout<<"Sum is : "<<getSum(5,6);
 }
