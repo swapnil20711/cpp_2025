@@ -188,10 +188,22 @@ void print14(int len){
     }
 }
 
+void print15(int len){
+    for(int i=1;i<=len;i++){
+        for(int j=1;j<=len-i;j++){
+            cout<<" ";
+        }
+        for(int k=1;k<=i;k++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+
 int main(){
     int len;
     cin>>len;
     // print7(len);
     // print8(len);
-    print14(len);
+    print15(len);
 }

@@ -1,25 +1,5 @@
-Binary representation of 10 is: 1010
-Decimal representation of 1010 is: 10
-Bitwise AND: 1
-Bitwise OR: 7
-Bitwise XOR: 6
-Bitwise NOT: -6
-Left Shift: 10
-Right Shift: 2
-After swapping: 3 5
-The 1th bit is not set.
-The 2th bit is set.
-13
-9
-9
-15
-32
-1
-0
-3
-Number of bit flips from 10 to 7: 3
-Single number in the array: 4
-Single number in the array: 4
-Single number in the array is : 1
-Single number in the array is : 1
-Sum is : 7
+    *
+   **
+  ***
+ ****
+*****
